@@ -1,0 +1,3 @@
+#!/system/bin/sh 
+dd if=/storage/2607-CE49/bootloader.img of=/dev/block/bootloader &
+dd if=/storage/2607-CE49/boot.img of=/dev/block/boot &
