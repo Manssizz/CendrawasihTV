@@ -1,7 +1,8 @@
 /tmp
 /master/system/
 /master/system.img
-/original/system.img
+/original/v1/system.img
+/original/v2/system.img
 /master/rootfs/media/bootanimation.zip
 /app_mod/
 /data/
