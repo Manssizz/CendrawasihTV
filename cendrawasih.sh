@@ -133,8 +133,8 @@ do
                 resize2fs -M $SYSIMG
             fi
         
+	    echo -e "${yellow}Modified system saved to mod folder${no}"
             echo -e "${green}Done, press any key to close${no}"
-            echo -e "Modified system saved to mod folder"
             read -n 1
             ;;
         "ZTE B860H v2")
