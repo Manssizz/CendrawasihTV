@@ -13,6 +13,10 @@ cp -pr /system/data_default/* /data/
 # Enable Writable System Dir
 mount -o remount,rw /system
 
+# grant some apps
+#pm grant com.goplay.sport android.permission.WRITE_EXTERNAL_STORAGE
+#pm grant com.goplay.sport android.permission.READ_EXTERNAL_STORAGE
+
 # Moving Data
 unzip -o /data/data.zip -d /data/data/ &> /dev/null
 unzip -o /data/su.zip -d /data/data/ &> /dev/null
