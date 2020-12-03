@@ -6,6 +6,8 @@
 /master/rootfs/media/bootanimation.zip
 /app_mod/
 /data/
+/mod/system/
+/mod/system.img
 /tools/android-udev-rules/
 /tools/platform-tools/
 /tools/platform-tools_r30.0.5-linux.zip
