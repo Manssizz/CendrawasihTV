@@ -12,7 +12,7 @@
 - [x] Setting app with default telkom settings
 
 ## Flashing instructure
-Use flash.sh in release folder then select V1 device.
+Use [flash.sh](https://github.com/Manssizz/CendrawasihTV/blob/master/release/flash.sh) in release folder then select V1 device.
 **don't forget check your stb already connected on pc**
 
 ## Enjoy
