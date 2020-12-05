@@ -138,8 +138,8 @@ do
             read -n 1
             ;;
         "ZTE B860H v2")
-            SYSDIR="mod/v2/system"
-            SYSIMG="mod/v2/system.img"
+            SYSDIR="mod/system"
+            SYSIMG="mod/system.img"
 
             cp -v original/v2/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
@@ -205,7 +205,22 @@ do
             rm -f $SYSDIR/app/com.google.android.tts-3.10.10-210310101.apk
             rm -rf $SYSDIR/priv-app/Contacts/
             rm -rf $SYSDIR/priv-app/LiveTv/
-                   
+
+            echo -e "${yellow}Remove extra packages${no}"
+            rm -rf $SYSDIR/app/cleanXperience-v2
+            rm -rf $SYSDIR/app/com.google.android.youtube.tv-1
+            rm -rf $SYSDIR/app/GoogleJapaneseInput
+            rm -rf $SYSDIR/app/PlayGamesPano
+            rm -rf $SYSDIR/app/Mebox_1.1.3.58.apk
+            rm -rf $SYSDIR/app/snowball.apk
+            rm -rf $SYSDIR/app/Superuser.apk
+            rm -rf $SYSDIR/app/Root_Exploler.apk
+            rm -rf $SYSDIR/app/ATV_Launcher.apk
+            rm -rf $SYSDIR/priv-app/Phonesky
+            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
+
+
+
             echo "Remove Album"
             rm -rf $SYSDIR/priv-app/Gallery2/
             
@@ -220,13 +235,15 @@ do
 #            [ -d master/v1/data_default ] || mkdir -p master/v2/data_default/data
 #             Fix data permissions, its changed after checkout from git
 #            chmod -R og+rw master/v2/data_default/data/*
-            chmod -R +x master/v2/xbin/*
-            chmod -R +x master/v2/bin/*
+            chmod -R +x master/v1/xbin/*
+            chmod -R +x master/v1/bin/*
 
             echo 'Merge mod folder into $SYSDIR/*'
+            cp -pruv master/v1/* $SYSDIR/
             cp -pruv master/v2/* $SYSDIR/
+            #cp -pruv gapps_beta/rootfs_gapps/* $SYSDIR/
             unzip -o master/fonts.zip -d $SYSDIR/fonts/
-            rm master/v2/app/klampok.apk
+            #rm master/v2/app/klampok.apk
 
             echo "Unmount $SYSDIR"
             umount $SYSDIR
