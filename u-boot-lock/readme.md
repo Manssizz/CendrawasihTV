@@ -37,7 +37,7 @@ Boot device, short R87 on board (to boot u-boot on MMC), also press power to boo
 
 ## Flash u-boot.bin to bootloader partition on internal eMMC
 ``` bash
-./tools/linux/update partition bootloader firmware-bejat/u-boot.bin
+./tools/linux/update partition bootloader u-boot-lock/u-boot.bin
 ```
 
 

@@ -8,14 +8,16 @@ blue='\e[34m'
 green='\e[32m'
 
 [ "$UID" = "0" ] || exec sudo "$0" "$@"
+clear
+
 echo -e "+--------------------------------------------+"
-echo -e "              ${red}CendrawasihTV${no}                   "
-echo -e "      github.com/manssizz/CendrawasihTV       "
-echo -e "        ${yellow}Don't forget to read BUILD.MD${no}         "
+echo -e "|             ${red}CendrawasihTV${no}                  |"
+echo -e "|     github.com/manssizz/CendrawasihTV      |"
+echo -e "|       ${yellow}Don't forget to read BUILD.MD${no}        |"
 echo -e "+--------------------------------------------+"
 
 PS3='Select your device: '
-options=("ZTE B860H v1" "ZTE B860H v2" "Developer Build" "Flash" "Quit")
+options=("ZTE B860H v1" "ZTE B860H v2" "Developer Build" "Unlock Bootloader" "Flash" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -216,8 +218,10 @@ do
             rm -rf $SYSDIR/app/Superuser.apk
             rm -rf $SYSDIR/app/Root_Exploler.apk
             rm -rf $SYSDIR/app/ATV_Launcher.apk
-            rm -rf $SYSDIR/priv-app/Phonesky
-            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
+            rm -rf $SYSDIR/priv-app/OneTimeInitializer
+            rm -rf $SYSDIR/priv-app/PackageInstaller
+#            rm -rf $SYSDIR/priv-app/Phonesky
+#            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
 
 
 
@@ -259,12 +263,22 @@ do
                 resize2fs -M $SYSIMG
             fi
 
-            #echo "Done, press any button (on the keyboard, not power button) to close."
-            #read -n 1
+	    	echo -e "${yellow}Modified system saved to mod folder${no}"
+            echo -e "${green}Done, press any key to close${no}"
+            read -n 1
             ;;
         "Developer Build")
             echo "you chose choice $REPLY which is $opt"
             ;;
+
+        "Unlock Bootloader")
+            UPDATEBIN="./tools/linux/update"
+            echo -e "${yellow}Make sure you read readme.md in u-boot-lock folder${no}"
+            echo -e "${red}Don't forget insert microsd with bootloader file${no}"
+            $UPDATEBIN scan | grep 'No ' && exit 1
+            $UPDATEBIN partition bootloader u-boot-lock/u-boot.bin
+            ;;
+        
         "Flash")
             UPDATEBIN="./tools/linux/update"
             $UPDATEBIN scan | grep 'No ' && exit 1
