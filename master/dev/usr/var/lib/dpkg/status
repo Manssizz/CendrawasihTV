@@ -1,0 +1,288 @@
+Architecture: arm
+Depends: ncurses, readline (>= 8.0), libandroid-support, libiconv, termux-tools, command-not-found
+Description: A sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh)
+Essential: yes
+Homepage: https://www.gnu.org/software/bash/
+Installed-Size: 940
+Maintainer: Fredrik Fornwall @fornwall
+Package: bash
+Version: 5.0.7-1
+Status: install ok installed
+
+Architecture: arm
+Breaks: bash (<< 5.0)
+Depends: libandroid-support, ncurses
+Description: Library that allow users to edit command lines as they are typed in
+Homepage: https://tiswww.case.edu/php/chet/readline/rltop.html
+Installed-Size: 376
+Maintainer: Fredrik Fornwall @fornwall
+Package: readline
+Version: 8.0-1
+Status: install ok installed
+
+Architecture: arm
+Description: Library for text-based user interfaces in a terminal-independent manner
+Homepage: https://invisible-island.net/ncurses/
+Installed-Size: 460
+Maintainer: Fredrik Fornwall @fornwall
+Package: ncurses
+Version: 6.1.20190511-1
+Status: install ok installed
+
+Architecture: arm
+Description: Suggest installation of packages in interactive shell sessions
+Homepage: https://termux.com
+Installed-Size: 124
+Maintainer: Fredrik Fornwall @fornwall
+Package: command-not-found
+Version: 1.37
+Status: install ok installed
+
+Architecture: all
+Conflicts: procps (<< 3.3.15-2)
+Depends: termux-am
+Description: Basic system tools for Termux
+Essential: yes
+Homepage: https://termux.com/
+Installed-Size: 140
+Maintainer: Fredrik Fornwall @fornwall
+Package: termux-tools
+Version: 0.67
+Status: install ok installed
+
+Architecture: arm
+Breaks: libandroid-support (<= 24)
+Description: An implementation of iconv()
+Homepage: https://www.gnu.org/software/libiconv/
+Installed-Size: 1044
+Maintainer: Fredrik Fornwall @fornwall
+Package: libiconv
+Replaces: libandroid-support (<= 24)
+Version: 1.16-2
+Status: install ok installed
+
+Architecture: all
+Depends: termux-keyring
+Description: Package repository containing games for termux
+Homepage: https://github.com/termux/game-packages
+Installed-Size: 40
+Maintainer: Henrik Grimler @Grimler91
+Package: game-repo
+Version: 1.0
+Status: install ok installed
+
+Architecture: all
+Depends: termux-keyring
+Description: Package repository containing science software
+Homepage: https://github.com/termux/science-packages
+Installed-Size: 40
+Maintainer: Henrik Grimler @Grimler91
+Package: science-repo
+Version: 1.0
+Status: install ok installed
+
+Architecture: all
+Description: GPG public keys for the official Termux repositories
+Homepage: https://github.com/termux
+Installed-Size: 64
+Maintainer: Fredrik Fornwall @fornwall
+Package: termux-keyring
+Version: 1.1
+Status: install ok installed
+
+Architecture: all
+Description: Contains LICENSE files for common licenses
+Essential: yes
+Homepage: https://termux.com
+Installed-Size: 404
+Maintainer: Fredrik Fornwall @fornwall
+Package: termux-licenses
+Version: 1.0
+Status: install ok installed
+
+Architecture: arm
+Description: Small POSIX-compliant implementation of /bin/sh
+Essential: yes
+Homepage: http://gondor.apana.org.au/~herbert/dash/
+Installed-Size: 184
+Maintainer: Fredrik Fornwall @fornwall
+Package: dash
+Version: 0.5.10.2-1
+Status: install ok installed
+
+Architecture: arm
+Description: XZ-format compression library
+Homepage: https://tukaani.org/xz/
+Installed-Size: 128
+Maintainer: Fredrik Fornwall @fornwall
+Package: liblzma
+Version: 5.2.4
+Status: install ok installed
+
+Architecture: arm
+Description: Compression library implementing the deflate compression method found in gzip and PKZIP
+Homepage: https://www.zlib.net/
+Installed-Size: 92
+Maintainer: Fredrik Fornwall @fornwall
+Package: zlib
+Version: 1.2.11
+Status: install ok installed
+
+Architecture: arm
+Description: Library extending the Android C library (Bionic) for additional multibyte, locale and math support
+Essential: yes
+Homepage: https://github.com/termux/libandroid-support
+Installed-Size: 172
+Maintainer: Fredrik Fornwall @fornwall
+Package: libandroid-support
+Pre-Depends: dpkg (>= 1.19.4-3)
+Version: 24-3
+Status: install ok installed
+
+Architecture: arm
+Conflicts: coreutils (<< 8.25-4)
+Description: Tiny versions of many common UNIX utilities into a single small executable
+Essential: yes
+Homepage: https://busybox.net/
+Installed-Size: 496
+Maintainer: Fredrik Fornwall @fornwall
+Package: busybox
+Version: 1.30.1-2
+Status: install ok installed
+
+Architecture: arm
+Description: C++ Standard Library
+Essential: yes
+Homepage: https://libcxx.llvm.org/
+Installed-Size: 588
+Maintainer: Fredrik Fornwall @fornwall
+Package: libc++
+Version: 20
+Status: install ok installed
+
+Architecture: all
+Description: Common CA certificates
+Homepage: https://curl.haxx.se/docs/caextract.html
+Installed-Size: 256
+Maintainer: Fredrik Fornwall @fornwall
+Package: ca-certificates
+Version: 20190515
+Status: install ok installed
+
+Architecture: arm
+Breaks: openssl-tool (<< 1.1.1b-1)
+Conflicts: libcurl (<< 7.61.0-1)
+Depends: ca-certificates
+Description: Library implementing the SSL and TLS protocols as well as general purpose cryptography functions
+Homepage: https://www.openssl.org/
+Installed-Size: 1980
+Maintainer: Fredrik Fornwall @fornwall
+Package: openssl
+Replaces: openssl-tool (<< 1.1.1b-1)
+Version: 1.1.1c-1
+Status: install ok installed
+
+Architecture: arm
+Description: nghttp HTTP 2.0 library
+Homepage: https://nghttp2.org/
+Installed-Size: 132
+Maintainer: Fredrik Fornwall @fornwall
+Package: libnghttp2
+Version: 1.38.0
+Status: install ok installed
+
+Architecture: arm
+Conflicts: apt (<< 1.4.8-8)
+Depends: openssl (>= 1.1.1), libnghttp2, zlib
+Description: Easy-to-use client-side URL transfer library
+Homepage: https://curl.haxx.se/
+Installed-Size: 328
+Maintainer: Fredrik Fornwall @fornwall
+Package: libcurl
+Version: 7.65.1
+Status: install ok installed
+
+Architecture: arm
+Conflicts: gnupg (<= 1.4.21)
+Depends: libbz2, libgcrypt, libgpg-error,zlib
+Description: GNU privacy guard - signature verification tool
+Homepage: https://www.gnupg.org/
+Installed-Size: 300
+Maintainer: Fredrik Fornwall @fornwall
+Package: gpgv
+Version: 2.2.16
+Status: install ok installed
+
+Architecture: arm
+Depends: libgpg-error
+Description: General purpose cryptographic library based on the code from GnuPG
+Homepage: https://www.gnu.org/software/libgcrypt/
+Installed-Size: 696
+Maintainer: Fredrik Fornwall @fornwall
+Package: libgcrypt
+Version: 1.8.4
+Status: install ok installed
+
+Architecture: arm
+Description: Small library that defines common error values for all GnuPG components
+Homepage: https://www.gnupg.org/related_software/libgpg-error/
+Installed-Size: 232
+Maintainer: Fredrik Fornwall @fornwall
+Package: libgpg-error
+Version: 1.36
+Status: install ok installed
+
+Architecture: arm
+Description: BZ2 format compression library
+Homepage: http://www.bzip.org/
+Installed-Size: 96
+Maintainer: Fredrik Fornwall @fornwall
+Package: libbz2
+Version: 1.0.6-3
+Status: install ok installed
+
+Architecture: arm
+Description: An execve() wrapper to make /bin and /usr/bin shebangs work
+Homepage: https://github.com/termux/termux-exec
+Installed-Size: 36
+Maintainer: Fredrik Fornwall @fornwall
+Package: termux-exec
+Version: 0.3
+Status: install ok installed
+
+Architecture: all
+Conflicts: termux-tools (<< 0.51)
+Description: Android Oreo-compatible am command reimplementation
+Homepage: https://github.com/michalbednarski/TermuxAm
+Installed-Size: 60
+Maintainer: Michal Bednarski @michalbednarski
+Package: termux-am
+Version: 0.2
+Status: install ok installed
+
+Architecture: arm
+Depends: busybox, liblzma, zlib
+Description: Debian package management system
+Essential: yes
+Homepage: https://packages.debian.org/dpkg
+Installed-Size: 684
+Maintainer: Fredrik Fornwall @fornwall
+Package: dpkg
+Version: 1.19.7
+Status: install ok installed
+
+Architecture: arm
+Conflicts: apt-transport-https
+Depends: libcurl, liblzma, dpkg, gpgv, libc++, termux-exec, zlib, termux-licenses
+Description: Front-end for the dpkg package manager
+Essential: yes
+Homepage: https://packages.debian.org/apt
+Installed-Size: 2032
+Maintainer: Fredrik Fornwall @fornwall
+Package: apt
+Recommends: game-repo, science-repo
+Replaces: apt-transport-https
+Suggests: unstable-repo
+Version: 1.4.9-5
+Status: install ok installed
+
