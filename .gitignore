@@ -3,6 +3,7 @@
 /master/system.img
 /original/v1/system.img
 /original/v2/system.img
+/original/dev/system.img
 /master/rootfs/media/bootanimation.zip
 /mod_module/
 /data/
