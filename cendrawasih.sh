@@ -228,7 +228,7 @@ do
             echo "Remove Album"
             rm -rf $SYSDIR/priv-app/Gallery2/
             
-            echo "Bootanimation"
+            echo -e "${yellow}Bootanimation${no}"
             pushd master/bootanimation
             [ -e ../v2/media/bootanimation.zip ] && sudo rm ../v2/media/bootanimation.zip
             [ -d ../v2/media ] || mkdir ../v2/media
@@ -268,7 +268,138 @@ do
             read -n 1
             ;;
         "Developer Build")
-            echo "you chose choice $REPLY which is $opt"
+			rm $SYSIMG
+            clear
+            
+            echo -e "${green}Copy original firmware...${no}"
+            cp -v original/v1/system.img $SYSIMG || exit 1
+            chmod 777 $SYSIMG
+
+
+            echo -e "${yellow}Mounting system.img to $SYSDIR ${no}"
+            [ -d $SYSDIR ] || mkdir $SYSDIR
+            mount -o loop,noatime,rw,sync $SYSIMG $SYSDIR
+
+            #Modding Script
+            echo -e "${red}Remove 3rd Apps (indihome) ${no}"
+            rm -rf $SYSDIR/preinstall
+
+            echo -e "${red}Remove Unwanted Apps${no}"
+            # Must be removed, or you got Iptv Err
+            rm -f $SYSDIR/app/MainControl.apk
+            rm -f $SYSDIR/app/sqm.apk
+            rm -rf $SYSDIR/app/apk
+
+            rm -f $SYSDIR/app/AppsMgr-release.apk
+            rm -f $SYSDIR/app/ajvm.apk
+            rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
+            rm -f $SYSDIR/app/FactoryTestTool.apk
+            rm -f $SYSDIR/app/iptvclient_boot-release.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/ZTEUpgrade.apk
+            rm -f $SYSDIR/app/ZTEBrowser.apk
+            rm -f $SYSDIR/app/ZTEPlayer.apk
+
+            rm -f $SYSDIR/app/VideoTestTool.apk
+            rm -rf $SYSDIR/app/QuickSearchBox
+            rm -rf $SYSDIR/app/NetworkTest
+            rm -rf $SYSDIR/app/ztehelper
+            rm -rf $SYSDIR/app/HomeMediaCenter
+
+            rm -f $SYSDIR/app/IPTV.apk
+            rm -f $SYSDIR/app/mcspbase.apk
+            rm -f $SYSDIR/app/NaAgent.apk
+            rm -f $SYSDIR/app/netmanager.apk
+            rm -f $SYSDIR/app/nmAssistant.apk
+
+            # Cleann!
+            rm -f $SYSDIR/app/OSDService.apk
+            rm -f $SYSDIR/app/ZeroCfgUI.apk
+            rm -f $SYSDIR/app/Dlnagwapt.apk
+            rm -f $SYSDIR/app/MSGAPK.apk
+
+            rm -f $SYSDIR/app/dlna.apk
+            rm -f $SYSDIR/app/MSGAPKSub.apk
+            rm -rf $SYSDIR/app/AuthConfig
+            rm -rf $SYSDIR/app/SubtitleService
+            rm -rf $SYSDIR/app/FileBrowser
+
+            # MeBox launcher
+            rm -f $SYSDIR/app/launcher_tkz4.apk
+
+            # Must removed if using GAPPS TV
+            rm -f $SYSDIR/app/TVClient.apk
+            #rm -rf $SYSDIR/app/ADBSetting
+            rm -rf $SYSDIR/app/Camera2
+            rm -rf $SYSDIR/app/Music
+            rm -rf $SYSDIR/app/DownloadProviderUi
+            rm -f $SYSDIR/app/com.google.android.tts-3.10.10-210310101.apk
+            rm -rf $SYSDIR/priv-app/Contacts/
+            rm -rf $SYSDIR/priv-app/LiveTv/
+
+            #Uncomment if you want use hardware keyboard only (no softkeyboard)
+            #rm -rf $SYSDIR/app/LatinIME
+            #rm -rf $SYSDIR/app/OpenWnn
+
+            echo -e "${red}Remove Unwanted services${no}"
+            rm -f $SYSDIR/bin/netaccess
+            rm -f $SYSDIR/bin/depconfig
+            rm -rf $SYSDIR/app/AppInstaller
+            rm -rf $SYSDIR/priv-app/Gallery2/
+
+            echo -e "${yellow}Remove extra packages${no}"
+            rm -rf $SYSDIR/app/cleanXperience-v2
+            rm -rf $SYSDIR/app/com.google.android.youtube.tv-1
+            rm -rf $SYSDIR/app/GoogleJapaneseInput
+            rm -rf $SYSDIR/app/PlayGamesPano
+            rm -rf $SYSDIR/app/Mebox_1.1.3.58.apk
+            rm -rf $SYSDIR/app/snowball.apk
+            rm -rf $SYSDIR/app/Superuser.apk
+            rm -rf $SYSDIR/app/Root_Exploler.apk
+            rm -rf $SYSDIR/app/ATV_Launcher.apk
+            rm -rf $SYSDIR/priv-app/OneTimeInitializer
+            rm -rf $SYSDIR/priv-app/PackageInstaller
+            rm -rf $SYSDIR/priv-app/Phonesky
+            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
+
+            echo -e "${yellow}Bootanimation${no}"
+            pushd master/bootanimation
+            [ -e ../dev/media/bootanimation.zip ] && sudo rm ../dev/media/bootanimation.zip
+            [ -d ../dev/media ] || mkdir ../dev/media
+            sudo zip -0 -r '../dev/media/bootanimation.zip' *
+            popd
+
+            echo -e "${yellow}Coying default data${no}"
+            [ -d master/dev/data_default ] || mkdir -p master/dev/data_default/data
+             Fix data permissions, its changed after checkout from git
+            chmod -R og+rw master/dev/data_default/data/*
+            chmod -R +x master/dev/xbin/*
+            chmod -R +x master/dev/bin/*
+
+            echo 'Merge mod folder into $SYSDIR/*'
+            cp -pruv master/v1/* $SYSDIR/
+            cp -pruv master/dev/* $SYSDIR/
+            #cp -pruv gapps_beta/rootfs_gapps/* $SYSDIR/
+#            unzip -o master/fonts.zip -d $SYSDIR/fonts/
+            #rm master/v2/app/klampok.apk
+
+            echo -e "${yellow}Unmount $SYSDIR${no}"
+            umount $SYSDIR
+
+            if which e2fsck &> /dev/null; then
+                echo -e "${yellow}Check/repair file system.img${no}"
+                e2fsck -f $SYSIMG -y
+            fi
+
+            if which resize2fs &> /dev/null; then
+                # kecilkan partisi biar ga lama bgt ngeflashnya
+                echo -e "${yellow}Minimizing system.img${no}"
+                resize2fs -M $SYSIMG
+            fi
+
+	    	echo -e "${yellow}Modified system saved to mod folder${no}"
+            echo -e "${green}Done, press any key to close${no}"
+            read -n 1
             ;;
 
         "Unlock Bootloader")
