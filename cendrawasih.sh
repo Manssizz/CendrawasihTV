@@ -43,7 +43,7 @@ do
             rm -f $SYSDIR/app/MainControl.apk
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
-
+	    rm -rf $SYSDIR/app/Browser
             rm -f $SYSDIR/app/AppsMgr-release.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
