@@ -44,12 +44,12 @@ do
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
 	    rm -rf $SYSDIR/app/Browser
-            rm -f $SYSDIR/app/AppsMgr-release.apk
+            rm -f $SYSDIR/app/AppsMgr-flash.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
-            rm -f $SYSDIR/app/iptvclient_boot-release.apk
-            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/iptvclient_boot-flash.apk
+            rm -f $SYSDIR/app/popup-flash-signed.apk
             rm -f $SYSDIR/app/ZTEUpgrade.apk
             rm -f $SYSDIR/app/ZTEBrowser.apk
             rm -f $SYSDIR/app/ZTEPlayer.apk
@@ -161,12 +161,12 @@ do
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
 
-            rm -f $SYSDIR/app/AppsMgr-release.apk
+            rm -f $SYSDIR/app/AppsMgr-flash.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
-            rm -f $SYSDIR/app/iptvclient_boot-release.apk
-            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/iptvclient_boot-flash.apk
+            rm -f $SYSDIR/app/popup-flash-signed.apk
             rm -f $SYSDIR/app/ZTEUpgrade.apk
             rm -f $SYSDIR/app/ZTEBrowser.apk
             rm -f $SYSDIR/app/ZTEPlayer.apk
@@ -290,12 +290,12 @@ do
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
 
-            rm -f $SYSDIR/app/AppsMgr-release.apk
+            rm -f $SYSDIR/app/AppsMgr-flash.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
-            rm -f $SYSDIR/app/iptvclient_boot-release.apk
-            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/iptvclient_boot-flash.apk
+            rm -f $SYSDIR/app/popup-flash-signed.apk
             rm -f $SYSDIR/app/ZTEUpgrade.apk
             rm -f $SYSDIR/app/ZTEBrowser.apk
             rm -f $SYSDIR/app/ZTEPlayer.apk
@@ -415,12 +415,12 @@ do
             $UPDATEBIN scan | grep 'No ' && exit 1
             clear
             echo -e "${red}FLASHING... DON'T UNPLUG YOUR STB${no}"
-            #[ -e release/u-boot.bin ] && $UPDATEBIN partition bootloader release/u-boot.bin
-            [ -e release/boot.img ] && $UPDATEBIN partition boot release/boot.img
-            [ -e release/conf.img ] && $UPDATEBIN partition conf release/conf.img
-            #[ -e release/logo.img ] && $UPDATEBIN partition logo kitchen/logo.img
-            [ -e release/env.img ] && $UPDATEBIN partition env release/env.img
-            [ -e release/recovery.img ] && $UPDATEBIN partition recovery release/recovery.img
+            #[ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/u-boot.bin
+            [ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
+            [ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
+            #[ -e flash/logo.img ] && $UPDATEBIN partition logo kitchen/logo.img
+            [ -e flash/env.img ] && $UPDATEBIN partition env flash/env.img
+            [ -e flash/recovery.img ] && $UPDATEBIN partition recovery flash/recovery.img
             $UPDATEBIN partition system mod/system.img
             $UPDATEBIN bulkcmd "amlmmc erase data"
             $UPDATEBIN bulkcmd "amlmmc erase cache"
