@@ -12,6 +12,7 @@ cp -pr /system/data_default/* /data/
 
 # Enable Writable System Dir
 mount -o remount,rw /system
+mount -o remount,rw /dev
 
 # grant some apps
 #pm grant com.goplay.sport android.permission.WRITE_EXTERNAL_STORAGE
@@ -23,13 +24,15 @@ unzip -o /data/su.zip -d /data/data/ &> /dev/null
 unzip -o /data/wifi.zip -d /data/misc/wifi/ &> /dev/null
 $TOAST "PATCHING U-BOOT"
 dd if=/data/boot.img of=/dev/block/boot &> /dev/null
-dd if=/data/bootloader.img of=/dev/block/bootloader &> /dev/null
+#dd if=/data/bootloader.img of=/dev/block/bootloader &> /dev/null
+dd if=/data/u-boot.bin of=/dev/block/bootloader &> /dev/null
 
 rm /data/data.zip
 rm /data/su.zip
 rm /data/wifi.zip
+rm /data/u-boot.bin
 rm /data/boot.img
-rm /data/bootloader.img
+#rm /data/bootloader.img
 
 rm -rf /system/data_default
 rm -rf /system/app_install
