@@ -418,7 +418,7 @@ do
             #[ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/u-boot.bin
             [ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
             [ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
-            #[ -e flash/logo.img ] && $UPDATEBIN partition logo kitchen/logo.img
+            [ -e flash/logo.img ] && $UPDATEBIN partition logo flash/logo.img
             [ -e flash/env.img ] && $UPDATEBIN partition env flash/env.img
             [ -e flash/recovery.img ] && $UPDATEBIN partition recovery flash/recovery.img
             $UPDATEBIN partition system mod/system.img
