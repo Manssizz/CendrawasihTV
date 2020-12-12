@@ -15,7 +15,7 @@ sedangkan boot.img tetap mengambil dari internal eMMC.
     
 ### Tanpa Partisi
 ``` bash
-sudo dd if=u-boot.sd.bin of=/dev/sdc
+sudo dd if=u-boot.sd.bin of=/dev/sdd
 ```
 
     Ganti `sdc` sesuai dengan block-device MMC di PC mu
