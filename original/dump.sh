@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Amilogic USB Burning tool 'update' binary installed on my system as 'aml'
-UPDATE_BIN="aml"
+UPDATE_BIN="../tools/linux/update"
 
 if [ ! -f "$(which $UPDATE_BIN)" ]; then
     echo "Update bin not found: $UPDATE_BIN"
