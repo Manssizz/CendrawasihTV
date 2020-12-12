@@ -40,11 +40,13 @@ do
 
             echo -e "${red}Remove Unwanted Apps${no}"
             # Must be removed, or you got Iptv Err
-            rm -f $SYSDIR/app/MainControl.apk
+            rm -f $SYSDIR/app/MainControl.appk
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
-	    rm -rf $SYSDIR/app/Browser
-            rm -f $SYSDIR/app/AppsMgr-flash.apk
+	    	rm -rf $SYSDIR/app/Browser
+	    	rm -rf $SYSDIR/app/AppsListApi
+            rm -f $SYSDIR/app/AppsMgr-release.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
@@ -160,9 +162,10 @@ do
             rm -f $SYSDIR/app/MainControl.apk
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
-
-            rm -f $SYSDIR/app/AppsMgr-flash.apk
+            rm -rf $SYSDIR/app/AppsListApi
+            rm -f $SYSDIR/app/AppsMgr-release.apk
             rm -f $SYSDIR/app/ajvm.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
             rm -f $SYSDIR/app/iptvclient_boot-flash.apk
@@ -289,8 +292,9 @@ do
             rm -f $SYSDIR/app/MainControl.apk
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
-
-            rm -f $SYSDIR/app/AppsMgr-flash.apk
+            rm -rf $SYSDIR/app/AppsListApi
+            rm -f $SYSDIR/app/AppsMgr-release.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
