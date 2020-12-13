@@ -5,7 +5,8 @@ TOAST="am broadcast -a id.klampok.broadcast.CUSTOM_BROADCAST -e MSG "
 
 # Install custom APK
 find /system/app_install/ -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} "$TOAST" \;
-
+## Install Split APK
+#pm install-write -S
 
 # Data configuration
 cp -pr /system/data_default/* /data/
