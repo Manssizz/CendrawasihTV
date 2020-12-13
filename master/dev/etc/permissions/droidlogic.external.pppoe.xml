@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+<library
+name="AmlogicPPPoE"
+file="/system/framework/droidlogic.external.pppoe.jar"
+/>
+</permissions>
+
