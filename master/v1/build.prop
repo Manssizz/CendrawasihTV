@@ -39,16 +39,30 @@ ro.build.product=VIM
 # Do not try to parse description, fingerprint, or thumbprint
 ro.build.description=kvim-userdebug 6.0.1 MHC19J 20170929 test-keys
 ro.build.fingerprint=Khadas/kvim/kvim:6.0.1/MHC19J/20170929:userdebug/test-keys
-ro.build.characteristics=mbx,nosdcard
+
 # end build properties
 #
 # from device/khadas/kvim/system.prop
 #
 const.bootanim.delay=1500
+
+#Gapps
+ro.vendor.sw.version=B860Hv1-CendrawasihTV
+ro.addon.type=gapps
+ro.addon.arch=arm
+ro.addon.sdk=23
+ro.addon.platform=6.0
+ro.addon.open_type=pico
+ro.addon.open_version=20201204
+ro.build.characteristics=mbx,nosdcard
+ro.com.google.gmsversion=6.0_r3
+ro.com.google.clientidbase=android-videostrong-tv
+
 # Set display related config
 ro.platform.has.mbxuimode=true
 ro.platform.has.realoutputmode=true
 ro.platform.keepbackground.app=com.droidlogic.PPPoE
+
 #camera max to 1080p
 ro.camera.preview.MaxSize=1920x1088
 ro.camera.preview.LimitedRate=1920x1080x30,1280x720x30,640x480x30,320x240x28
@@ -311,13 +325,6 @@ ro.app.optimization=true
 ro.product.firmware=00601001
 #ro.product.otaupdateurl=http://khadas.com:8008/otaupdate/update
 ro.product.update.autocheck=false
-ro.vendor.sw.version=B860Hv1-CendrawasihTV
-ro.addon.type=gapps
-ro.addon.arch=arm
-ro.addon.sdk=23
-ro.addon.platform=6.0
-ro.addon.open_type=pico
-ro.addon.open_version=20170302
 ro.hdmi.device_type=4
 sys.display-size=3840x2160
 dalvik.vm.heapstartsize=16m
