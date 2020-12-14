@@ -3,4 +3,4 @@
 *.7z.* binary
 *.bin binary
 *.zip binary
-
+master/dev/data_default/kodi.zip filter=lfs diff=lfs merge=lfs -text

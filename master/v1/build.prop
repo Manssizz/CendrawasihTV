@@ -17,8 +17,8 @@ ro.build.user=Manssizz
 ro.build.host=Cendrawasih-Project
 ro.build.tags=test-keys
 ro.build.flavor=kvim_userdebug
-ro.product.model=B860H
-ro.product.brand=zte
+ro.product.model=Pixel 3a
+ro.product.brand=ZTE
 ro.product.name=CendrawasihTV
 ro.product.device=CendrawasihOS
 ro.product.board=gxl_p212
@@ -29,8 +29,8 @@ ro.product.cpu.abi2=armeabi
 ro.product.cpu.abilist=armeabi-v7a,armeabi
 ro.product.cpu.abilist32=armeabi-v7a,armeabi
 ro.product.cpu.abilist64=
-ro.product.manufacturer=ZTE
-#ro.product.manufacturer=Google
+#ro.product.manufacturer=ZTE
+ro.product.manufacturer=Google
 ro.product.locale=en-ID
 ro.wifi.channels=11
 ro.board.platform=gxl
@@ -39,40 +39,25 @@ ro.build.product=VIM
 # Do not try to parse description, fingerprint, or thumbprint
 ro.build.description=kvim-userdebug 6.0.1 MHC19J 20170929 test-keys
 ro.build.fingerprint=Khadas/kvim/kvim:6.0.1/MHC19J/20170929:userdebug/test-keys
-
+ro.build.characteristics=mbx,nosdcard
 # end build properties
 #
 # from device/khadas/kvim/system.prop
 #
 const.bootanim.delay=1500
-
-#Gapps
-ro.vendor.sw.version=B860Hv1-CendrawasihTV
-ro.addon.type=gapps
-ro.addon.arch=arm
-ro.addon.sdk=23
-ro.addon.platform=6.0
-ro.addon.open_type=pico
-ro.addon.open_version=20201204
-ro.build.characteristics=mbx,nosdcard
-ro.com.google.gmsversion=6.0_r3
-ro.com.google.clientidbase=android-videostrong-tv
-
 # Set display related config
 ro.platform.has.mbxuimode=true
 ro.platform.has.realoutputmode=true
 ro.platform.keepbackground.app=com.droidlogic.PPPoE
-
 #camera max to 1080p
 ro.camera.preview.MaxSize=1920x1088
 ro.camera.preview.LimitedRate=1920x1080x30,1280x720x30,640x480x30,320x240x28
 ro.camera.preview.UseMJPEG=1
 
 #for bt auto connect
-ro.autoconnectbt.isneed=false
+ro.autoconnectbt.isneed=true
 ro.autoconnectbt.macprefix=00:CD:FF
 ro.autoconnectbt.btclass=50c
-ro.autoconnectbt.nameprefix=Amlogic_RC
 
 #if wifi Only
 ro.radio.noril=false
@@ -173,7 +158,6 @@ persist.fw.force_adoptable=true
 media.libplayer.curlenable=true
 media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod,bluray_mod,vrwc_mod
 
-# Timezone
 persist.sys.timezone=Asia/Jakarta
 
 #Hdmi In
@@ -189,16 +173,14 @@ persist.daemonsu.enable=true
 sys.display-size=1280x720
 sys.display-size.check=false
 
-#Netflix
-#ro.nrdp.modelgroup=NEXUSPLAYERFUGU
-ro.nrdp.modelgroup=XIAOMIM12TRIAL
-sys.open.deepcolor=true
-
 #adb
 service.adb.tcp.port=5555
 persist.service.adb.enable=1
 persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
+
+#Netflix
+#ro.nrdp.modelgroup=XIAOMIM12TRIAL
 
 #vidon xbmc
 ro.vidon.platform=sunchip
@@ -225,12 +207,6 @@ debug.egl.swapinterval=-60
 
 #Widevine
 ro.boot.fhwidevine=true
-
-# Quad9 tweak
-net.rmnet0.dns1=9.9.9.9
-net.rmnet0.dns2=149.112.112.112
-net.dns=9.9.9.9
-net.dns=149.112.112.112
 
 ######## UBOOTENV VARIBLES - r/w as system properties ##########
 #
@@ -325,6 +301,13 @@ ro.app.optimization=true
 ro.product.firmware=00601001
 #ro.product.otaupdateurl=http://khadas.com:8008/otaupdate/update
 ro.product.update.autocheck=false
+ro.vendor.sw.version=B860Hv1-CendrawasihTV
+ro.addon.type=gapps
+ro.addon.arch=arm
+ro.addon.sdk=23
+ro.addon.platform=6.0
+ro.addon.open_type=pico
+ro.addon.open_version=20170302
 ro.hdmi.device_type=4
 sys.display-size=3840x2160
 dalvik.vm.heapstartsize=16m

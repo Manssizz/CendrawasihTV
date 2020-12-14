@@ -275,7 +275,7 @@ do
             clear
             
             echo -e "${green}Copy original firmware...${no}"
-            cp -v original/v1/system.img $SYSIMG || exit 1
+            cp -v original/v2/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
 
 
@@ -374,9 +374,9 @@ do
             popd
 
             echo -e "${yellow}Coying default data${no}"
-            [ -d master/dev/data_default ] || mkdir -p master/dev/data_default/data
-             Fix data permissions, its changed after checkout from git
-            chmod -R og+rw master/dev/data_default/data/*
+#            [ -d master/dev/data_default ] || mkdir -p master/dev/data_default/data
+#             Fix data permissions, its changed after checkout from git
+#            chmod -R og+rw master/dev/data_default/data/*
             chmod -R +x master/dev/xbin/*
             chmod -R +x master/dev/bin/*
 
