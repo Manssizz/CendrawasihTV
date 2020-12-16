@@ -6,7 +6,7 @@ no='\033[0m'
 yellow='\e[33m'
 blue='\e[34m'
 green='\e[32m'
-
+#clean= "umount mod/system/ && rm mod/system.img"
 [ "$UID" = "0" ] || exec sudo "$0" "$@"
 clear
 
@@ -142,23 +142,24 @@ do
             read -n 1
             ;;
         "ZTE B860H v2")
-            SYSDIR="mod/system"
-            SYSIMG="mod/system.img"
-
+            rm $SYSIMG
+            clear
+            
+            echo -e "${green}Copy original firmware...${no}"
             cp -v original/v2/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
 
 
-            echo "Mounting system.img to $SYSDIR"
+            echo -e "${yellow}Mounting system.img to $SYSDIR ${no}"
             [ -d $SYSDIR ] || mkdir $SYSDIR
             mount -o loop,noatime,rw,sync $SYSIMG $SYSDIR
 
             #Modding Script
-            echo "Remove 3rd Party Apps (indihome)"
+            echo -e "${red}Remove 3rd Apps (indihome) ${no}"
             rm -rf $SYSDIR/preinstall
-            
-            echo "Remove Unwanted Apps"
+
             # Must be removed, or you got Iptv Err
+            echo -e "${red}Remove Unwanted Apps${no}"
             rm -f $SYSDIR/app/MainControl.apk
             rm -f $SYSDIR/app/sqm.apk
             rm -rf $SYSDIR/app/apk
@@ -210,6 +211,7 @@ do
             rm -f $SYSDIR/app/com.google.android.tts-3.10.10-210310101.apk
             rm -rf $SYSDIR/priv-app/Contacts/
             rm -rf $SYSDIR/priv-app/LiveTv/
+            rm -rf $SYSDIR/priv-app/Gallery2/
 
             echo -e "${yellow}Remove extra packages${no}"
             rm -rf $SYSDIR/app/cleanXperience-v2
@@ -225,11 +227,6 @@ do
             rm -rf $SYSDIR/priv-app/PackageInstaller
 #            rm -rf $SYSDIR/priv-app/Phonesky
 #            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
-
-
-
-            echo "Remove Album"
-            rm -rf $SYSDIR/priv-app/Gallery2/
             
             echo -e "${yellow}Bootanimation${no}"
             pushd master/bootanimation
@@ -238,7 +235,7 @@ do
             sudo zip -0 -r '../v2/media/bootanimation.zip' *
             popd
 
-            echo "Coying default data"
+            echo -e "${yellow}Coying default data${no}"
 #            [ -d master/v1/data_default ] || mkdir -p master/v2/data_default/data
 #             Fix data permissions, its changed after checkout from git
 #            chmod -R og+rw master/v2/data_default/data/*
@@ -252,21 +249,21 @@ do
             unzip -o master/fonts.zip -d $SYSDIR/fonts/
             #rm master/v2/app/klampok.apk
 
-            echo "Unmount $SYSDIR"
+            echo -e "${yellow}Unmount $SYSDIR${no}"
             umount $SYSDIR
 
             if which e2fsck &> /dev/null; then
-                echo "Check/repair file system.img"
+                echo -e "${yellow}Check/repair file system.img${no}"
                 e2fsck -f $SYSIMG -y
             fi
 
             if which resize2fs &> /dev/null; then
                 # kecilkan partisi biar ga lama bgt ngeflashnya
-                echo "Minimizing system.img"
+                echo -e "${yellow}Minimizing system.img${no}"
                 resize2fs -M $SYSIMG
             fi
-
-	    	echo -e "${yellow}Modified system saved to mod folder${no}"
+        
+	    echo -e "${yellow}Modified system saved to mod folder${no}"
             echo -e "${green}Done, press any key to close${no}"
             read -n 1
             ;;
@@ -377,7 +374,7 @@ do
 #            [ -d master/dev/data_default ] || mkdir -p master/dev/data_default/data
 #             Fix data permissions, its changed after checkout from git
 #            chmod -R og+rw master/dev/data_default/data/*
-            chmod -R +x master/dev/xbin/*
+#            chmod -R +x master/dev/xbin/*
             chmod -R +x master/dev/bin/*
 
             echo 'Merge mod folder into $SYSDIR/*'
@@ -420,10 +417,10 @@ do
             clear
             echo -e "${red}FLASHING... DON'T UNPLUG YOUR STB${no}"
             #[ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/u-boot.bin
-            [ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
-            [ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
-            [ -e flash/logo.img ] && $UPDATEBIN partition logo flash/logo.img
-            [ -e flash/env.img ] && $UPDATEBIN partition env flash/env.img
+            #[ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
+            #[ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
+            #[ -e flash/logo.img ] && $UPDATEBIN partition logo flash/logo.img
+            #[ -e flash/env.img ] && $UPDATEBIN partition env flash/env.img
             [ -e flash/recovery.img ] && $UPDATEBIN partition recovery flash/recovery.img
             $UPDATEBIN partition system mod/system.img
             $UPDATEBIN bulkcmd "amlmmc erase data"
