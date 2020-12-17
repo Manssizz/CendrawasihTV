@@ -45,13 +45,23 @@ ro.build.characteristics=mbx,nosdcard
 # from device/khadas/kvim/system.prop
 #
 const.bootanim.delay=1500
+
+# Gapps
+ro.addon.type=gapps
+ro.addon.arch=arm
+ro.addon.sdk=23
+ro.addon.platform=6.0
+ro.addon.open_type=pico
+ro.addon.open_version=20201204
+
 # Set display related config
 ro.platform.has.mbxuimode=true
 ro.platform.has.realoutputmode=true
 ro.platform.keepbackground.app=com.droidlogic.PPPoE
-#camera max to 1080p
-ro.camera.preview.MaxSize=1920x1088
-ro.camera.preview.LimitedRate=1920x1080x30,1280x720x30,640x480x30,320x240x28
+
+# Camera max to 720pp
+ro.camera.preview.MaxSize=1280x720
+ro.camera.preview.LimitedRate=1280x720x30,640x480x30,320x240x28
 ro.camera.preview.UseMJPEG=1
 
 #for bt auto connect
@@ -66,6 +76,12 @@ ro.radio.noril=false
 ro.net.pppoe=true
 net.default.mtu=1492
 
+# Quad9 tweak
+net.rmnet0.dns1=9.9.9.9
+net.rmnet0.dns2=149.112.112.112
+net.dns=9.9.9.9
+net.dns=149.112.112.112
+
 #the prop is used for enable or disable
 #DD+/DD force output when HDMI EDID is not supported
 #by default,the force output mode is enabled.
@@ -76,13 +92,16 @@ ro.platform.disable.audiorawout=false
 #Dolby DD+ decoder option
 #this prop to for videoplayer display the DD+/DD icon when playback
 ro.platform.support.dolby=true
+
 #DTS decoder option
 #display dts icon when playback
 ro.platform.support.dts=true
+
 #DTS-HD support prop
 #ro.platform.support.dtstrans=true
 #ro.platform.support.dtsmulasset=true
 #DTS-HD prop end
+
 # Enable player buildin
 media.amplayer.seekkeyframe=true
 media.amsuperplayer.enable=true
@@ -93,7 +112,6 @@ media.amsuperplayer.defplayer=PV_PLAYER
 media.amplayer.thumbnail=true
 media.amplayer.dsource4local=1
 media.amplayer.dropwaitxms=100
-
 media.arm.audio.decoder=ape,flac,dts,ac3,eac3,wma,wmapro,mp3,aac,vorbis,raac,cook,amr,pcm,adpcm,aac_latm,rm
 media.wfd.use-pcm-audio=false
 media.wfd.videoresolution-type=1
@@ -103,7 +121,6 @@ media.wfd.video-bitrate=2000000
 media.html5videowin.enable=1
 media.decoder.vfm.defmap=decoder ppmgr deinterlace amvideo
 media.decoder.vfm.drmmap=decoder amvideo
-
 media.hls.disable-nuplayer=1
 
 #add for video boot, 1 means use video boot, others not .
@@ -169,9 +186,9 @@ media.video.screenmode=true
 persist.daemonsu.enable=true
 
 #4k YouTube + Others
-#sys.display-size=3840x2160
-sys.display-size=1280x720
-sys.display-size.check=false
+sys.display-size=3840x2160
+#sys.display-size=1280x720
+sys.display-size.check=true
 
 #adb
 service.adb.tcp.port=5555
@@ -180,7 +197,7 @@ persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
 
 #Netflix
-#ro.nrdp.modelgroup=XIAOMIM12TRIAL
+ro.nrdp.modelgroup=XIAOMIM12TRIAL
 
 #vidon xbmc
 ro.vidon.platform=sunchip
@@ -302,14 +319,7 @@ ro.product.firmware=00601001
 #ro.product.otaupdateurl=http://khadas.com:8008/otaupdate/update
 ro.product.update.autocheck=false
 ro.vendor.sw.version=B860Hv1-CendrawasihTV
-ro.addon.type=gapps
-ro.addon.arch=arm
-ro.addon.sdk=23
-ro.addon.platform=6.0
-ro.addon.open_type=pico
-ro.addon.open_version=20170302
 ro.hdmi.device_type=4
-sys.display-size=3840x2160
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=192m
 dalvik.vm.heapsize=512m
@@ -339,7 +349,6 @@ dalvik.vm.stack-trace-file=/data/anr/traces.txt
 ro.HOME_APP_ADJ=1
 ro.media.enc.jpeg.quality=100
 debug.sf.hw=1
-ro.telephony.call_ring.delay=0
 windowsmgr.max_events_per_sec=150
 wifi.supplicant_scan_interval=180
 pm.sleep_mode=1
@@ -349,23 +358,13 @@ debug.performance.tuning=1
 video.accelerate.hw=1
 ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.hprof.vid.bps=8000000
-ro.ril.hsxpa=2
-ro.ril.gprsclass=10
-ro.ril.hep=1
-ro.ril.enable.dtm=1
-ro.ril.hsdpa.category=10
-ro.ril.enable.a53=1
-ro.ril.enable.3g.prefix=1
-ro.ril.htcmaskw1.bitmask=4294967295
-ro.ril.htcmaskw1=14449
-ro.ril.hsupa.category=5
+
 net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
-ro.lge.proximity.delay=25
-mot.proximity.delay=25
+
 ro.kernel.android.checkjni=0
 ro.config.hwfeature_wakeupkey=0
 ro.mot.buttonlight.timeout=0
@@ -376,6 +375,7 @@ dalvik.vm.dexopt-flags=m=y
 ro.mot.eri.losalert.delay=1000
 persist.service.pcsync.enable=0
 persist.service.lgospd.enable=0
+
 framework/com.android.location.provider.jar
 ro.com.google.locationfeatures=0
 ro.com.google.networklocation=0
