@@ -45,6 +45,7 @@ ro.build.characteristics=mbx,nosdcard
 # from device/khadas/kvim/system.prop
 #
 const.bootanim.delay=1500
+
 # Gapps
 ro.addon.type=gapps
 ro.addon.arch=arm
@@ -74,6 +75,12 @@ ro.radio.noril=false
 #if need pppoe
 ro.net.pppoe=true
 net.default.mtu=1492
+
+# Quad9 tweak
+net.rmnet0.dns1=9.9.9.9
+net.rmnet0.dns2=149.112.112.112
+net.dns=9.9.9.9
+net.dns=149.112.112.112
 
 #the prop is used for enable or disable
 #DD+/DD force output when HDMI EDID is not supported
