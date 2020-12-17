@@ -3,6 +3,10 @@
 settings put secure install_non_market_apps 1
 TOAST="am broadcast -a id.klampok.broadcast.CUSTOM_BROADCAST -e MSG "
 
+$TOAST "Welcome to CendrawasihTV"
+$TOAST "Preparation for installing..."
+$TOAST "DON'T CLOSE OR POWEROFF YOUR DEVICE!!!"
+
 # Install custom APK
 find /system/app_install/ -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} "$TOAST" \;
 ## Install Split APK
@@ -14,6 +18,10 @@ cp -pr /system/data_default/* /data/
 # Enable Writable System Dir
 mount -o remount,rw /system
 #mount -o remount,rw /dev
+
+# Install Busybox
+$TOAST "Installing Busybox"
+sh /system/bin/busybox.bin
 
 # grant some apps
 #pm grant com.goplay.sport android.permission.WRITE_EXTERNAL_STORAGE

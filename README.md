@@ -18,11 +18,11 @@
 	* Extract with command ```tar -xf Cendrawasih-*.tar.gz```
 	* Move to Cendrawasih folder
 	* Type ```./flash.sh``` 
-	* In terminal you can see 2 option. **Unlock Bootloader** and **Flash**
+	* In terminal you will see 2 option. **Unlock Bootloader** and **Flash**
 		* If you have stb with bootloader lock, you can see [this](https://github.com/Manssizz/CendrawasihTV/tree/master/u-boot-lock) reference before choose Unlock Bootloader
 		* If you bootlaoder unlocked, you can choose flash menu.
 		* You will see flashing process.
-***
+	***
 
 * Windows User
 	* Download modified file system in [release file](https://github.com/Manssizz/CendrawasihTV/releases/)
@@ -47,7 +47,7 @@
 		update “reset”	
 		```
 	* You will see flashing process.
-***
+	***
 
 _Note: Best perform this project if you use Linux_
 
