@@ -9,6 +9,7 @@
 | Kodi | | <div align="center">✓ | <div align="center">✓ |
 | Termux|  | | <div align="center">✓ |
 |MicroG + Service|  | <div align="center">✓ | <div align="center">✓ |
+	
 _**Note:** All version works with all varian, but if you force flash V2/Dev build to V1 (1Gb RAM) it will make your device lag._
 ***
 ### Usage
