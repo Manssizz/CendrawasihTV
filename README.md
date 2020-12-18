@@ -9,9 +9,8 @@
 | Kodi | | <div align="center">✓ | <div align="center">✓ |
 | Termux|  | | <div align="center">✓ |
 |MicroG + Service|  | <div align="center">✓ | <div align="center">✓ |
-
 _**Note:** All version works with all varian, but if you force flash V2/Dev build to V1 (1Gb RAM) it will make your device lag._
-
+***
 ### Usage
 * Linux User
 	* Download modified file system in [release file](https://github.com/Manssizz/CendrawasihTV/releases/)
@@ -23,8 +22,7 @@ _**Note:** All version works with all varian, but if you force flash V2/Dev buil
 		* If you have stb with bootloader lock, you can see [this](https://github.com/Manssizz/CendrawasihTV/tree/master/u-boot-lock) reference before choose Unlock Bootloader
 		* If you bootlaoder unlocked, you can choose flash menu.
 		* You will see flashing process.
-	***
-
+	
 * Windows User
 	* Download modified file system in [release file](https://github.com/Manssizz/CendrawasihTV/releases/)
 	* Connect your stb to PC with usb male to male 
@@ -48,12 +46,13 @@ _**Note:** All version works with all varian, but if you force flash V2/Dev buil
 		update “reset”	
 		```
 	* You will see flashing process.
-	***
 
 _<div align="right">Note: Best perform this project if you use Linux</div>_
+***
 
 ### Contribute
 Feel free if you want to contribute with this project.
+***
 
 ### Credits
 - [ndunks](https://github.com/ndunks/custom-rom-stb-zte-B860-indihome) for original ROM
