@@ -49,7 +49,7 @@
 	* You will see flashing process.
 	***
 
-_Note: Best perform this project if you use Linux_
+_<div align="right">Note: Best perform this project if you use Linux</div>_
 
 ### Contribute
 Feel free if you want to contribute with this project.
