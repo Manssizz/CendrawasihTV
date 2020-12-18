@@ -1,15 +1,16 @@
 ## <div align="center">CendrawasihTV</div>
 
 ### General Feature
-- [x] Very Stable for ZTE B860H v1 (Light Version)
-- [x] Auto clear RAM and Cache
-- [x] SuperSU update to 2.82
-- [x] Force HD in Netflix
-- [x] Auto patching u-boot
-- [x] Beauty icon banner
-- [x] Dolby Support
-- [x] Ads Blocked (GoodbyeAds Source)
-- [x] Many more on release page. 
+| Apps \ Device  | V1 | V2 | Dev |
+|---|----|----|-----|
+| Autoboost |<div align="center"> ✓ |<div align="center"> ✓ |<div align="center"> ✓  |</div>
+| VOD | <div align="center">✓ | <div align="center">✓ | <div align="center">✓  |
+| IPTV | <div align="center">✓| <div align="center">✓ | <div align="center">✓ |
+| Kodi | | <div align="center">✓ | <div align="center">✓ |
+| Termux|  | | <div align="center">✓ |
+|MicroG + Service|  | <div align="center">✓ | <div align="center">✓ |
+
+_**Note:** All version works with all varian, but if you force flash V2/Dev build to V1 (1Gb RAM) it will make your device lag._
 
 ### Usage
 * Linux User
