@@ -5,7 +5,11 @@ TOAST="am broadcast -a id.klampok.broadcast.CUSTOM_BROADCAST -e MSG "
 
 # Install custom APK
 find /system/app_install/ -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} "$TOAST" \;
-8 unzip -o /data/kodi.zip -d /data/data/ &> /dev/null
+
+$TOAST "Welcome to CendrawasihTV"
+$TOAST "Preparation for installing..."
+$TOAST "DON'T CLOSE OR POWEROFF YOUR DEVICE!!!"
+
 ## Install Split APK
 #pm install-write -S
 
@@ -23,7 +27,6 @@ mount -o remount,rw /system
 # Moving Data
 unzip -o /data/data.zip -d /data/data/ &> /dev/null
 unzip -o /data/su.zip -d /data/data/ &> /dev/null
-unzip -o /data/kodi.zip -d /data/data/ &> /dev/null
 unzip -o /data/wifi.zip -d /data/misc/wifi/ &> /dev/null
 
 
