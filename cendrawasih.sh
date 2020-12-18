@@ -300,7 +300,7 @@ do
             rm -rf $SYSDIR/app/apk
             rm -rf $SYSDIR/app/AppsListApi
             #rm -f $SYSDIR/app/AppsMgr-release.apk
-            rm -f $SYSDIR/app/popup-release-signed.apk
+            #rm -f $SYSDIR/app/popup-release-signed.apk
             rm -f $SYSDIR/app/ajvm.apk
             rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
             rm -f $SYSDIR/app/FactoryTestTool.apk
@@ -397,14 +397,14 @@ do
 #            unzip -o master/fonts.zip -d $SYSDIR/fonts/
             #rm master/v2/app/klampok.apk
             rm $SYSDIR/app/TerminalEmulator.apk 
-            echo -e "{yellow}Add script app_installer${no}"
-            sed -i '14i $TOAST "Installing Busybox"' $SYSDIR/bin/app_installer.sh
-            sed -i '15i sh /system/bin/busybox.bin' $SYSDIR/bin/app_installer.sh
-            sed -i '30i unzip -o /data/kodi.zip -d /data/data/ &> /dev/null' $SYSDIR/bin/app_installer.sh
-            sed -i '31i unzip -o /data/termux.zip -d /system/ &> /dev/null' $SYSDIR/bin/app_installer.sh
-            sed -i '35i rm /data/kodi.zip' $SYSDIR/bin/app_installer.sh
-            sed -i '36i rm /data/termux.zip' $SYSDIR/bin/app_installer.sh
-            sed -i '37i sh /system/runmefirst.sh' $SYSDIR/bin/app_installer.sh
+#            echo -e "{yellow}Add script app_installer${no}"
+#            sed -i '14i $TOAST "Installing Busybox"' $SYSDIR/bin/app_installer.sh
+#            sed -i '15i sh /system/bin/busybox.bin' $SYSDIR/bin/app_installer.sh
+#            sed -i '30i unzip -o /data/kodi.zip -d /data/data/ &> /dev/null' $SYSDIR/bin/app_installer.sh
+#            sed -i '31i unzip -o /data/termux.zip -d /system/ &> /dev/null' $SYSDIR/bin/app_installer.sh
+#            sed -i '35i rm /data/kodi.zip' $SYSDIR/bin/app_installer.sh
+#            sed -i '36i rm /data/termux.zip' $SYSDIR/bin/app_installer.sh
+#            sed -i '37i sh /system/runmefirst.sh' $SYSDIR/bin/app_installer.sh
 
 
             echo -e "${yellow}Unmount $SYSDIR${no}"
@@ -439,7 +439,7 @@ do
             $UPDATEBIN scan | grep 'No ' && exit 1
             clear
             echo -e "${red}FLASHING... DON'T UNPLUG YOUR STB${no}"
-#            [ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/bootloader
+            [ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/bootloader.img
             [ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
             [ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
             [ -e flash/logo.img ] && $UPDATEBIN partition logo flash/logo.img
