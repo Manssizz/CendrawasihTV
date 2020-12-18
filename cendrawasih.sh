@@ -366,15 +366,25 @@ do
             rm -rf $SYSDIR/app/ATV_Launcher.apk
 
             echo -e "${yellow}Remove Old Gapps ${no}"
+            rm -rf $SYSDIR/bless
             rm -rf $SYSDIR/app/com.google.android.youtube.tv-1
+            rm -rf $SYSDIR/app/TerminalEmulator
+            rm -rf $SYSDIR/app/GoogleCalendarSyncAdapter
             rm -rf $SYSDIR/app/GoogleContactsSyncAdapter
             rm -rf $SYSDIR/app/GoogleJapaneseInput
             rm -rf $SYSDIR/app/GoogleTTS
             rm -rf $SYSDIR/app/PlayGamesPano
+            rm -rf $SYSDIR/priv-app/GmsCore
             rm -rf $SYSDIR/priv-app/GoogleBackupTransport
+            rm -rf $SYSDIR/priv-app/GoogleLoginService
             rm -rf $SYSDIR/priv-app/GoogleServicesFramework
             rm -rf $SYSDIR/priv-app/Phonesky
             rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
+            rm -rf $SYSDIR/priv-app/Velvet
+
+            ### Dont erase this dir or your device will brick
+#            rm -rf $SYSDIR/priv-app/GoogleOneTimeInitializer
+#            rm -rf $SYSDIR/priv-app/OneTimeInitializer
 
             echo -e "${yellow}Bootanimation${no}"
             pushd master/bootanimation
@@ -422,6 +432,25 @@ do
             fi
 
 	    	echo -e "${yellow}Modified system saved to mod folder${no}"
+            echo -e "${green}Done, press any key to close${no}"
+#            read -n 1
+#            ;;
+            UPDATEBIN="./tools/linux/update"
+            $UPDATEBIN scan | grep 'No ' && exit 1
+            clear
+            echo -e "${red}FLASHING... DON'T UNPLUG YOUR STB${no}"
+            [ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/bootloader.img
+            [ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
+            [ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
+            [ -e flash/logo.img ] && $UPDATEBIN partition logo flash/logo.img
+            [ -e flash/recovery.img ] && $UPDATEBIN partition recovery flash/recovery.img
+            $UPDATEBIN partition system mod/system.img
+            $UPDATEBIN bulkcmd "amlmmc erase data"
+            $UPDATEBIN bulkcmd "amlmmc erase cache"
+            $UPDATEBIN bulkcmd "setenv hdmimode 720p60hz"
+            $UPDATEBIN bulkcmd "setenv -f EnableSelinux permissive"
+            $UPDATEBIN bulkcmd "setenv firstboot 1"
+            $UPDATEBIN bulkcmd "saveenv"
             echo -e "${green}Done, press any key to close${no}"
             read -n 1
             ;;
