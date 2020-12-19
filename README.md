@@ -31,7 +31,7 @@ _**Note:** All version works with all varian, but if you force flash V2/Dev buil
 	* Move to Cendrawasih folder
 	* Copy all .img file in ROM folder to tools/windows/ for easy flashing
 	* If you bootlader locked, you must burn u-boot-sd.bin to your Microsd with BootCard Maker in _tools/windows/burnBootCard/_ folder
-	* Press shift and Open Command Window Here (if you dont know about open command window here, right click and open as Adminstartion in _tools/windows/cmd-here-windows-10.reg_. it will auto set registry on your windows machine)
+	* Press shift and Open Command Window Here (if you dont know about open command window here, right click and run as Administration in _tools/windows/cmd-here-windows-10.reg_. it will auto set registry on your windows machine)
 	* Type this command in cmd
 		``` 
 		update partition bootloader bootloader.img
@@ -51,7 +51,7 @@ _**Note:** All version works with all varian, but if you force flash V2/Dev buil
 _<div align="right">Note: Best perform this project if you use Linux</div>_
 
 ### Contribute
-Feel free if you want to contribute with this project.
+Feel free if you want to contribute with this project. you can read [CONTRIBUTING.md](https://github.com/Manssizz/CendrawasihTV/blob/master/CONTRIBUTING.md) for guide rule
 
 ### Credits
 - [ndunks](https://github.com/ndunks/custom-rom-stb-zte-B860-indihome) for original ROM
