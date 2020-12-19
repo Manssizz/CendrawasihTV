@@ -22,6 +22,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "ZTE B860H v1")
+            clear
             echo -e "${green}Copy original firmware...${no}"
             cp -v original/v1/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
@@ -138,7 +139,10 @@ do
             echo -e "${green}Done, press any key to close${no}"
             read -n 1
             ;;
+
+
         "ZTE B860H v2")        
+            clear
             echo -e "${green}Copy original firmware...${no}"
             cp -v original/v2/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
@@ -279,9 +283,12 @@ do
             echo -e "${green}Done, press any key to close${no}"
             read -n 1
             ;;
+
+
         "Developer Build")
- 	        echo -e "${green}Copy original firmware...${no}"
-            cp -v original/v2/system.img $SYSIMG || exit 1
+ 	    clear
+            echo -e "${green}Copy original firmware...${no}"
+            cp -v original/dev/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
 
 
@@ -385,6 +392,8 @@ do
             ### Dont erase this dir or your device will brick
 #            rm -rf $SYSDIR/priv-app/GoogleOneTimeInitializer
 #            rm -rf $SYSDIR/priv-app/OneTimeInitializer
+#            rm -rf $SYSDIR/priv-app/PackageInstaller
+#            rm -rf $SYSDIR/priv-app/GooglePackageInstaller
 
             echo -e "${yellow}Bootanimation${no}"
             pushd master/bootanimation
@@ -433,27 +442,9 @@ do
 
 	    	echo -e "${yellow}Modified system saved to mod folder${no}"
             echo -e "${green}Done, press any key to close${no}"
-#            read -n 1
-#            ;;
-            UPDATEBIN="./tools/linux/update"
-            $UPDATEBIN scan | grep 'No ' && exit 1
-            clear
-            echo -e "${red}FLASHING... DON'T UNPLUG YOUR STB${no}"
-            [ -e flash/u-boot.bin ] && $UPDATEBIN partition bootloader flash/bootloader.img
-            [ -e flash/boot.img ] && $UPDATEBIN partition boot flash/boot.img
-            [ -e flash/conf.img ] && $UPDATEBIN partition conf flash/conf.img
-            [ -e flash/logo.img ] && $UPDATEBIN partition logo flash/logo.img
-            [ -e flash/recovery.img ] && $UPDATEBIN partition recovery flash/recovery.img
-            $UPDATEBIN partition system mod/system.img
-            $UPDATEBIN bulkcmd "amlmmc erase data"
-            $UPDATEBIN bulkcmd "amlmmc erase cache"
-            $UPDATEBIN bulkcmd "setenv hdmimode 720p60hz"
-            $UPDATEBIN bulkcmd "setenv -f EnableSelinux permissive"
-            $UPDATEBIN bulkcmd "setenv firstboot 1"
-            $UPDATEBIN bulkcmd "saveenv"
-            echo -e "${green}Done, press any key to close${no}"
             read -n 1
             ;;
+
 
         "Unlock Bootloader")
             UPDATEBIN="./tools/linux/update"
