@@ -288,7 +288,7 @@ do
         "Developer Build")
  	    clear
             echo -e "${green}Copy original firmware...${no}"
-            cp -v original/dev/system.img $SYSIMG || exit 1
+            cp -v original/v2/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
 
 
