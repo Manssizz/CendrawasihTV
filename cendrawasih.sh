@@ -279,7 +279,7 @@ do
                 resize2fs -M $SYSIMG
             fi
         
-	    echo -e "${yellow}Modified system saved to mod folder${no}"
+	      echo -e "${yellow}Modified system saved to mod folder${no}"
             echo -e "${green}Done, press any key to close${no}"
             read -n 1
             ;;
@@ -290,7 +290,6 @@ do
             echo -e "${green}Copy original firmware...${no}"
             cp -v original/v2/system.img $SYSIMG || exit 1
             chmod 777 $SYSIMG
-
 
             echo -e "${yellow}Mounting system.img to $SYSDIR ${no}"
             [ -d $SYSDIR ] || mkdir $SYSDIR
@@ -373,27 +372,28 @@ do
             rm -rf $SYSDIR/app/ATV_Launcher.apk
 
             echo -e "${yellow}Remove Old Gapps ${no}"
-#            rm -rf $SYSDIR/bless
+            rm -rf $SYSDIR/bless
             rm -rf $SYSDIR/app/com.google.android.youtube.tv-1
             rm -rf $SYSDIR/app/TerminalEmulator
-#            rm -rf $SYSDIR/app/GoogleCalendarSyncAdapter
+            rm -rf $SYSDIR/app/Browser
+            rm -rf $SYSDIR/app/GoogleCalendarSyncAdapter
             rm -rf $SYSDIR/app/GoogleContactsSyncAdapter
             rm -rf $SYSDIR/app/GoogleJapaneseInput
             rm -rf $SYSDIR/app/GoogleTTS
             rm -rf $SYSDIR/app/PlayGamesPano
-#            rm -rf $SYSDIR/priv-app/GmsCore
-#            rm -rf $SYSDIR/priv-app/GoogleBackupTransport
-#            rm -rf $SYSDIR/priv-app/GoogleLoginService
-#            rm -rf $SYSDIR/priv-app/GoogleServicesFramework
-#            rm -rf $SYSDIR/priv-app/Phonesky
-#            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
-#            rm -rf $SYSDIR/priv-app/Velvet
+            rm -rf $SYSDIR/priv-app/GmsCore
+            rm -rf $SYSDIR/priv-app/GoogleBackupTransport
+            rm -rf $SYSDIR/priv-app/GoogleLoginService
+            rm -rf $SYSDIR/priv-app/GoogleServicesFramework
+            rm -rf $SYSDIR/priv-app/Phonesky
+            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
+            rm -rf $SYSDIR/priv-app/Velvet
 
             ### Dont erase this dir or your device will brick
 #            rm -rf $SYSDIR/priv-app/GoogleOneTimeInitializer
 #            rm -rf $SYSDIR/priv-app/OneTimeInitializer
-#            rm -rf $SYSDIR/priv-app/PackageInstaller
 #            rm -rf $SYSDIR/priv-app/GooglePackageInstaller
+#            rm -rf $SYSDIR/priv-app/PackageInstaller
 
             echo -e "${yellow}Bootanimation${no}"
             pushd master/bootanimation
@@ -406,15 +406,22 @@ do
 #            [ -d master/dev/data_default ] || mkdir -p master/dev/data_default/data
 #             Fix data permissions, its changed after checkout from git
 #            chmod -R og+rw master/dev/data_default/data/*
-#            chmod -R +x master/dev/xbin/*
+            chmod -R +x master/v1/bin/*
+            chmod -R +x master/v1/xbin/*
             chmod -R +x master/dev/bin/*
+            chmod -R +x master/dev/xbin/*
 
             echo -e "${yellow}Merge master file to $SYSDIR ${no}"
             cp -pruv master/v1/* $SYSDIR/
             cp -pruv master/dev/* $SYSDIR/
+            mv $SYSDIR/app_install/* $SYSDIR/preinstall
+            rm -rf $SYSDIR/app_install/
+            rm -f $SYSDIR/bin/app_installer.sh
+
+
             #cp -pruv gapps_beta/rootfs_gapps/* $SYSDIR/
 #            unzip -o master/fonts.zip -d $SYSDIR/fonts/
-            #rm master/v2/app/klampok.apk
+            rm $SYSDIR/app/klampok.apk
             rm $SYSDIR/app/TerminalEmulator.apk 
 #            echo -e "{yellow}Add script app_installer${no}"
 #            sed -i '14i $TOAST "Installing Busybox"' $SYSDIR/bin/app_installer.sh
@@ -440,9 +447,9 @@ do
                 resize2fs -M $SYSIMG
             fi
 
-	    	echo -e "${yellow}Modified system saved to mod folder${no}"
+            echo -e "${yellow}Modified system saved to mod folder${no}"
             echo -e "${green}Done, press any key to close${no}"
-            read -n 1
+            read -n 1 
             ;;
 
 
