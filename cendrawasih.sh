@@ -116,7 +116,7 @@ do
             chmod -R +x master/v1/bin/*
             
             
-            echo 'Merge rootfs/* into $SYSDIR/*'
+            echo -e "${yellow}Merge master file to $SYSDIR ${no}"
             cp -pruv master/v1/* $SYSDIR/
             unzip -o master/fonts.zip -d $SYSDIR/fonts/
             
@@ -373,21 +373,21 @@ do
             rm -rf $SYSDIR/app/ATV_Launcher.apk
 
             echo -e "${yellow}Remove Old Gapps ${no}"
-            rm -rf $SYSDIR/bless
+#            rm -rf $SYSDIR/bless
             rm -rf $SYSDIR/app/com.google.android.youtube.tv-1
             rm -rf $SYSDIR/app/TerminalEmulator
-            rm -rf $SYSDIR/app/GoogleCalendarSyncAdapter
+#            rm -rf $SYSDIR/app/GoogleCalendarSyncAdapter
             rm -rf $SYSDIR/app/GoogleContactsSyncAdapter
             rm -rf $SYSDIR/app/GoogleJapaneseInput
             rm -rf $SYSDIR/app/GoogleTTS
             rm -rf $SYSDIR/app/PlayGamesPano
-            rm -rf $SYSDIR/priv-app/GmsCore
-            rm -rf $SYSDIR/priv-app/GoogleBackupTransport
-            rm -rf $SYSDIR/priv-app/GoogleLoginService
-            rm -rf $SYSDIR/priv-app/GoogleServicesFramework
-            rm -rf $SYSDIR/priv-app/Phonesky
-            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
-            rm -rf $SYSDIR/priv-app/Velvet
+#            rm -rf $SYSDIR/priv-app/GmsCore
+#            rm -rf $SYSDIR/priv-app/GoogleBackupTransport
+#            rm -rf $SYSDIR/priv-app/GoogleLoginService
+#            rm -rf $SYSDIR/priv-app/GoogleServicesFramework
+#            rm -rf $SYSDIR/priv-app/Phonesky
+#            rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
+#            rm -rf $SYSDIR/priv-app/Velvet
 
             ### Dont erase this dir or your device will brick
 #            rm -rf $SYSDIR/priv-app/GoogleOneTimeInitializer
