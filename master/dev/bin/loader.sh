@@ -7,7 +7,7 @@ if [ ! -e /data/misc/adb/adb_keys ]; then
 fi
 
 # Install App
-MARK=/data/local/KLAMPOK_SCRIPT_DONE
+MARK=/data/local/symbol_thirdpart_apks_installed
 
 if [ ! -e $MARK ]; then
 	mkdir -p /data/data/eu.chainfire.supersu/files
