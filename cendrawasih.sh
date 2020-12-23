@@ -414,15 +414,14 @@ do
             echo -e "${yellow}Merge master file to $SYSDIR ${no}"
             cp -pruv master/v1/* $SYSDIR/
             cp -pruv master/dev/* $SYSDIR/
-            mv $SYSDIR/app_install/* $SYSDIR/preinstall
-            rm -rf $SYSDIR/app_install/
-            rm -f $SYSDIR/bin/app_installer.sh
+#            find master/dev/ -mindepth 1 -maxdepth 1 -type d ! -regex '\(.*data_default\)' -exec cp -r {} $SYSDIR/ \;
+            zip -ur $SYSDIR/data_default/data.zip master/data_optional/org.xbmc.kodi
 
 
             #cp -pruv gapps_beta/rootfs_gapps/* $SYSDIR/
 #            unzip -o master/fonts.zip -d $SYSDIR/fonts/
-            rm $SYSDIR/app/klampok.apk
-            rm $SYSDIR/app/TerminalEmulator.apk 
+#            rm $SYSDIR/app/klampok.apk
+#            rm $SYSDIR/app/TerminalEmulator.apk 
 #            echo -e "{yellow}Add script app_installer${no}"
 #            sed -i '14i $TOAST "Installing Busybox"' $SYSDIR/bin/app_installer.sh
 #            sed -i '15i sh /system/bin/busybox.bin' $SYSDIR/bin/app_installer.sh
