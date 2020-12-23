@@ -18,4 +18,4 @@ echo 4096 16384 4194304 > /proc/sys/net/ipv4/tcp_wmem
 chmod 0770 /data/media
 chmod 0777 /data/media/0
 setprop hw.encoder.freerun 1
-#ifconfig eth0 192.168.1.12 netmask 255.255.255.0
+ifconfig eth0 192.168.1.12 netmask 255.255.255.0
