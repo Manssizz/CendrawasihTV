@@ -3,12 +3,12 @@
 settings put secure install_non_market_apps 1
 TOAST="am broadcast -a id.klampok.broadcast.CUSTOM_BROADCAST -e MSG "
 
-# Install custom APK
-find /system/preinstall/ -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} "$TOAST" \;
-
 $TOAST "Welcome to CendrawasihTV"
 $TOAST "Preparation for installing..."
 $TOAST "DON'T CLOSE OR POWEROFF YOUR DEVICE!!!"
+
+# Install custom APK
+find /system/preinstall/ -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} "$TOAST" \;
 
 ## Install Split APK
 #pm install-write -S
@@ -50,6 +50,7 @@ rm /data/u-boot.bin
 rm /data/boot.img
 #rm /data/bootloader.img
 
+$TOAST "Tolong Jangan Update Aplikasi untuk menghindari Aplikasi Error"
 $TOAST "Cendrawasih TV"
 $TOAST "@Manssizz"
 $TOAST "Rebooting Device... Please Wait..."
