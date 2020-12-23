@@ -14,7 +14,7 @@ if [ ! -e $MARK ]; then
 	cp /system/supersu.cfg /data/data/eu.chainfire.supersu/files/
 	chmod 700 /data/data/eu.chainfire.supersu/files/supersu.cfg
 
-	/system/bin/app_installer.sh &
+	/system/bin/preinstall.sh &
 	touch $MARK
 
 fi
