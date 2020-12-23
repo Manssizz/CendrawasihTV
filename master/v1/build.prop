@@ -305,7 +305,8 @@ ubootenv.var.screenmode=
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
-ro.config.wallpaper=/system/etc/default_wallpaper.png
+#ro.config.wallpaper=/system/etc/default_wallpaper.png
+ro.config.wallpaper=/system/etc/default_wallpaper.jpg
 ro.com.android.dateformat=MM-dd-yyyy
 ro.config.ringtone=Ring_Synth_04.ogg
 ro.config.notification_sound=pixiedust.ogg
