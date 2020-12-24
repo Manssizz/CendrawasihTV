@@ -227,17 +227,17 @@ do
             rm -rf $SYSDIR/app/Superuser.apk
             rm -rf $SYSDIR/app/Root_Exploler.apk
             rm -rf $SYSDIR/app/ATV_Launcher.apk
+            rm -f $SYSDIR/app/keyboard.apk
 
 
-
-		echo -e "${yellow}Remove Old Gapps ${no}"
+			echo -e "${yellow}Remove Old Gapps ${no}"
             rm -rf $SYSDIR/app/com.google.android.youtube.tv-1
-		rm -rf $SYSDIR/app/GoogleContactsSyncAdapter
-		rm -rf $SYSDIR/app/GoogleJapaneseInput
-		rm -rf $SYSDIR/app/GoogleTTS
+			rm -rf $SYSDIR/app/GoogleContactsSyncAdapter
+			rm -rf $SYSDIR/app/GoogleJapaneseInput
+			rm -rf $SYSDIR/app/GoogleTTS
             rm -rf $SYSDIR/app/PlayGamesPano
-		rm -rf $SYSDIR/priv-app/GoogleBackupTransport
-		rm -rf $SYSDIR/priv-app/GoogleServicesFramework
+			rm -rf $SYSDIR/priv-app/GoogleBackupTransport
+			rm -rf $SYSDIR/priv-app/GoogleServicesFramework
             rm -rf $SYSDIR/priv-app/Phonesky
             rm -rf $SYSDIR/priv-app/PrebuiltGmsCorePano
 
@@ -370,6 +370,7 @@ do
             rm -rf $SYSDIR/app/Superuser.apk
             rm -rf $SYSDIR/app/Root_Exploler.apk
             rm -rf $SYSDIR/app/ATV_Launcher.apk
+            rm -f $SYSDIR/app/keyboard.apk
 
             echo -e "${yellow}Remove Old Gapps ${no}"
             rm -rf $SYSDIR/bless
@@ -415,12 +416,12 @@ do
             cp -pruv master/v1/* $SYSDIR/
             cp -pruv master/dev/* $SYSDIR/
 #            find master/dev/ -mindepth 1 -maxdepth 1 -type d ! -regex '\(.*data_default\)' -exec cp -r {} $SYSDIR/ \;
-            zip -ur $SYSDIR/data_default/data.zip master/data_optional/org.xbmc.kodi
+#            zip -ur $SYSDIR/data_default/data.zip master/data_optional/org.xbmc.kodi
 
 
             #cp -pruv gapps_beta/rootfs_gapps/* $SYSDIR/
 #            unzip -o master/fonts.zip -d $SYSDIR/fonts/
-#            rm $SYSDIR/app/klampok.apk
+            rm $SYSDIR/app/klampok.apk
 #            rm $SYSDIR/app/TerminalEmulator.apk 
 #            echo -e "{yellow}Add script app_installer${no}"
 #            sed -i '14i $TOAST "Installing Busybox"' $SYSDIR/bin/app_installer.sh

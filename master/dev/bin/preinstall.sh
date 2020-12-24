@@ -1,5 +1,6 @@
 #!/system/bin/sh
 settings put secure install_non_market_apps 1
+MARK=/data/local/symbol_thirdpart_apks_installed
 PKGS=/system/preinstall/
 DATA=/system/bin/data.sh
 
@@ -9,7 +10,9 @@ echo "DON'T CLOSE OR POWEROFF YOUR DEVICE!!!"
 
 #find /system/app_install/ -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} "$TOAST" \;
 #find $PKGS -name "*\.apk" -exec sh -c '$1 "Installing $(basename $0 .apk)"; pm install $0' {} \;
-find $PKGS -name "*\.apk" -exec sh /system/bin/pm install {} \;
+busybox find $PKGS -name "*\.apk" -exec sh /system/bin/pm install {} \;
+
+sleep 20
 
 sh $DATA
 sleep 1

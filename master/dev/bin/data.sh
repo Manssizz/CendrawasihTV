@@ -1,4 +1,6 @@
 #!/system/bin/sh
+settings put secure install_non_market_apps 1
+MARK=/data/local/symbol_thirdpart_apks_installed
 
 # Data configuration
 cp -pr /system/data_default/* /data/
@@ -22,8 +24,8 @@ rm /data/kodi.zip
 rm /data/wifi.zip
 #rm /data/termux.zip
 
-rm -rf /system/data_default
-rm -rf /system/preinstall
+#rm -rf /system/data_default
+#rm -rf /system/preinstall
 #rm /data/data1.zip
 
 echo "Installing done, refreshing.."
@@ -47,5 +49,5 @@ for f in /system/data_default/data/*/; do
 	killall $(basename $f)
 done
 
-sleep 1
+sleep 20
 reboot
