@@ -1,8 +1,6 @@
 # begin addon properties
 ro.addon.type=gapps
-ro.addon.arch=arm
-ro.addon.sdk=23
-ro.addon.platform=6.0
-ro.addon.open_type=pico
-ro.addon.open_version=20201204
+ro.addon.platform=mm
+ro.addon.version=purenexus-gapps-mm-mr1-x86-leanback-20160202
+ro.addon.minimumversion=6.0.1
 # end addon properties
