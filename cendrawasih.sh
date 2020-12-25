@@ -32,58 +32,44 @@ do
             [ -d $SYSDIR ] || mkdir $SYSDIR
             mount -o loop,noatime,rw,sync $SYSIMG $SYSDIR
 
-            #Modding Script
+### Modding Script
             echo -e "${red}Remove 3rd Apps (indihome) ${no}"
             rm -rf $SYSDIR/preinstall
 
             echo -e "${red}Remove Unwanted Apps${no}"
-            # Must be removed, or you got Iptv Err
-            rm -f $SYSDIR/app/MainControl.apk
-            rm -f $SYSDIR/app/sqm.apk
+### Remove Dir
             rm -rf $SYSDIR/app/apk
-	    	rm -rf $SYSDIR/app/Browser
-	    	rm -rf $SYSDIR/app/AppsListApi
-            #rm -f $SYSDIR/app/AppsMgr-release.apk
-            rm -f $SYSDIR/app/popup-release-signed.apk
-            rm -f $SYSDIR/app/ajvm.apk
-            rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
-            rm -f $SYSDIR/app/FactoryTestTool.apk
-            rm -f $SYSDIR/app/iptvclient_boot-flash.apk
-            rm -f $SYSDIR/app/popup-flash-signed.apk
-            rm -f $SYSDIR/app/ZTEUpgrade.apk
-            rm -f $SYSDIR/app/ZTEBrowser.apk
-            rm -f $SYSDIR/app/ZTEPlayer.apk
-
-            rm -f $SYSDIR/app/VideoTestTool.apk
-            rm -rf $SYSDIR/app/QuickSearchBox
-            rm -rf $SYSDIR/app/NetworkTest
-            rm -rf $SYSDIR/app/ztehelper
-            rm -rf $SYSDIR/app/HomeMediaCenter
-
-            rm -f $SYSDIR/app/IPTV.apk
-            rm -f $SYSDIR/app/mcspbase.apk
-            rm -f $SYSDIR/app/NaAgent.apk
-            rm -f $SYSDIR/app/netmanager.apk
-            rm -f $SYSDIR/app/nmAssistant.apk
-
-            # Cleann!
-            rm -f $SYSDIR/app/OSDService.apk
-            rm -f $SYSDIR/app/ZeroCfgUI.apk
-            rm -f $SYSDIR/app/Dlnagwapt.apk
-            rm -f $SYSDIR/app/MSGAPK.apk
-
-            rm -f $SYSDIR/app/dlna.apk
-            rm -f $SYSDIR/app/MSGAPKSub.apk
+            rm -rf $SYSDIR/app/AppInstaller
+            rm -rf $SYSDIR/app/AppsListApi
             rm -rf $SYSDIR/app/AuthConfig
+            rm -rf $SYSDIR/app/Browser
+                  rm -rf $SYSDIR/app/FileBrowser
+            rm -rf $SYSDIR/priv-app/Gallery2
+            rm -rf $SYSDIR/app/HomeMediaCenter
+            rm -rf $SYSDIR/app/NetworkTest
+            rm -rf $SYSDIR/app/QuickSearchBox
             rm -rf $SYSDIR/app/SubtitleService
-            rm -rf $SYSDIR/app/FileBrowser
+            rm -rf $SYSDIR/app/ztehelper
 
-            # MeBox launcher
+### Remove Packages
+            rm -f $SYSDIR/app/ajvm.apk
+                  rm -f $SYSDIR/app/apm-targetad_ti-zte860_v2.3.0_230-release.apk
+                  rm -f $SYSDIR/app/FactoryTestTool.apk
+            rm -f $SYSDIR/app/IPTV.apk
+            rm -f $SYSDIR/app/iptvclient_boot-release.apk
+            rm -f $SYSDIR/app/Licauth.apk
+                  rm -f $SYSDIR/app/MSGAPK.apk            
+            rm -f $SYSDIR/app/MSGAPKSub.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/signed_UseeStore_v0.9.2.apk
+            rm -f $SYSDIR/app/signed-control-release-0.0.0.4.7.apk
+            rm -f $SYSDIR/app/SubtitleService.apk
+            rm -f $SYSDIR/app/ZTE*.apk
+
+### MeBox launcher
             rm -f $SYSDIR/app/launcher_tkz4.apk
 
-            # Must removed if using GAPPS TV
-            rm -f $SYSDIR/app/TVClient.apk
-            #rm -rf $SYSDIR/app/ADBSetting
+### Must removed if using GAPPS TV
             rm -rf $SYSDIR/app/Camera2
             rm -rf $SYSDIR/app/Music
             rm -rf $SYSDIR/app/DownloadProviderUi
@@ -91,15 +77,13 @@ do
             rm -rf $SYSDIR/priv-app/Contacts/
             rm -rf $SYSDIR/priv-app/LiveTv/
 
-            #Uncomment if you want use hardware keyboard only (no softkeyboard)
+### Uncomment if you want use hardware keyboard only (no softkeyboard)
             #rm -rf $SYSDIR/app/LatinIME
             #rm -rf $SYSDIR/app/OpenWnn
 
             echo -e "${red}Remove Unwanted services${no}"
             rm -f $SYSDIR/bin/netaccess
             rm -f $SYSDIR/bin/depconfig
-            rm -rf $SYSDIR/app/AppInstaller
-            rm -rf $SYSDIR/priv-app/Gallery2/
 
             echo -e "${yellow}Bootanimation${no}"
             pushd master/bootanimation
@@ -151,58 +135,44 @@ do
             [ -d $SYSDIR ] || mkdir $SYSDIR
             mount -o loop,noatime,rw,sync $SYSIMG $SYSDIR
 
-            #Modding Script
+### Modding Script
             echo -e "${red}Remove 3rd Apps (indihome) ${no}"
             rm -rf $SYSDIR/preinstall
 
             echo -e "${red}Remove Unwanted Apps${no}"
-            # Must be removed, or you got Iptv Err
-            rm -f $SYSDIR/app/MainControl.apk
-            rm -f $SYSDIR/app/sqm.apk
+### Remove Dir
             rm -rf $SYSDIR/app/apk
-	    	rm -rf $SYSDIR/app/Browser
-	    	rm -rf $SYSDIR/app/AppsListApi
-            #rm -f $SYSDIR/app/AppsMgr-release.apk
-            #rm -f $SYSDIR/app/popup-release-signed.apk
-            rm -f $SYSDIR/app/ajvm.apk
-            rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
-            rm -f $SYSDIR/app/FactoryTestTool.apk
-            rm -f $SYSDIR/app/iptvclient_boot-flash.apk
-            rm -f $SYSDIR/app/popup-flash-signed.apk
-            rm -f $SYSDIR/app/ZTEUpgrade.apk
-            rm -f $SYSDIR/app/ZTEBrowser.apk
-            rm -f $SYSDIR/app/ZTEPlayer.apk
-
-            rm -f $SYSDIR/app/VideoTestTool.apk
-            rm -rf $SYSDIR/app/QuickSearchBox
-            rm -rf $SYSDIR/app/NetworkTest
-            rm -rf $SYSDIR/app/ztehelper
-            rm -rf $SYSDIR/app/HomeMediaCenter
-
-            rm -f $SYSDIR/app/IPTV.apk
-            rm -f $SYSDIR/app/mcspbase.apk
-            rm -f $SYSDIR/app/NaAgent.apk
-            rm -f $SYSDIR/app/netmanager.apk
-            rm -f $SYSDIR/app/nmAssistant.apk
-
-            # Cleann!
-            rm -f $SYSDIR/app/OSDService.apk
-            rm -f $SYSDIR/app/ZeroCfgUI.apk
-            rm -f $SYSDIR/app/Dlnagwapt.apk
-            rm -f $SYSDIR/app/MSGAPK.apk
-
-            rm -f $SYSDIR/app/dlna.apk
-            rm -f $SYSDIR/app/MSGAPKSub.apk
+            rm -rf $SYSDIR/app/AppInstaller
+            rm -rf $SYSDIR/app/AppsListApi
             rm -rf $SYSDIR/app/AuthConfig
+            rm -rf $SYSDIR/app/Browser
+                  rm -rf $SYSDIR/app/FileBrowser
+            rm -rf $SYSDIR/priv-app/Gallery2
+            rm -rf $SYSDIR/app/HomeMediaCenter
+            rm -rf $SYSDIR/app/NetworkTest
+            rm -rf $SYSDIR/app/QuickSearchBox
             rm -rf $SYSDIR/app/SubtitleService
-            rm -rf $SYSDIR/app/FileBrowser
+            rm -rf $SYSDIR/app/ztehelper
 
-            # MeBox launcher
+### Remove Packages
+            rm -f $SYSDIR/app/ajvm.apk
+                  rm -f $SYSDIR/app/apm-targetad_ti-zte860_v2.3.0_230-release.apk
+                  rm -f $SYSDIR/app/FactoryTestTool.apk
+            rm -f $SYSDIR/app/IPTV.apk
+            rm -f $SYSDIR/app/iptvclient_boot-release.apk
+            rm -f $SYSDIR/app/Licauth.apk
+                  rm -f $SYSDIR/app/MSGAPK.apk            
+            rm -f $SYSDIR/app/MSGAPKSub.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/signed_UseeStore_v0.9.2.apk
+            rm -f $SYSDIR/app/signed-control-release-0.0.0.4.7.apk
+            rm -f $SYSDIR/app/SubtitleService.apk
+            rm -f $SYSDIR/app/ZTE*.apk
+
+### MeBox launcher
             rm -f $SYSDIR/app/launcher_tkz4.apk
 
-            # Must removed if using GAPPS TV
-            rm -f $SYSDIR/app/TVClient.apk
-            #rm -rf $SYSDIR/app/ADBSetting
+### Must removed if using GAPPS TV
             rm -rf $SYSDIR/app/Camera2
             rm -rf $SYSDIR/app/Music
             rm -rf $SYSDIR/app/DownloadProviderUi
@@ -210,15 +180,13 @@ do
             rm -rf $SYSDIR/priv-app/Contacts/
             rm -rf $SYSDIR/priv-app/LiveTv/
 
-            #Uncomment if you want use hardware keyboard only (no softkeyboard)
+### Uncomment if you want use hardware keyboard only (no softkeyboard)
             #rm -rf $SYSDIR/app/LatinIME
             #rm -rf $SYSDIR/app/OpenWnn
 
             echo -e "${red}Remove Unwanted services${no}"
             rm -f $SYSDIR/bin/netaccess
             rm -f $SYSDIR/bin/depconfig
-            rm -rf $SYSDIR/app/AppInstaller
-            rm -rf $SYSDIR/priv-app/Gallery2/
 
             echo -e "${yellow}Remove extra packages${no}"
             rm -rf $SYSDIR/app/cleanXperience-v2
@@ -295,57 +263,44 @@ do
             [ -d $SYSDIR ] || mkdir $SYSDIR
             mount -o loop,noatime,rw,sync $SYSIMG $SYSDIR
 
-            #Modding Script
+### Modding Script
             echo -e "${red}Remove 3rd Apps (indihome) ${no}"
             rm -rf $SYSDIR/preinstall
 
             echo -e "${red}Remove Unwanted Apps${no}"
-            # Must be removed, or you got Iptv Err
-            rm -f $SYSDIR/app/MainControl.apk
-            rm -f $SYSDIR/app/sqm.apk
+### Remove Dir
             rm -rf $SYSDIR/app/apk
+            rm -rf $SYSDIR/app/AppInstaller
             rm -rf $SYSDIR/app/AppsListApi
-            #rm -f $SYSDIR/app/AppsMgr-release.apk
-            #rm -f $SYSDIR/app/popup-release-signed.apk
-            rm -f $SYSDIR/app/ajvm.apk
-            rm -f $SYSDIR/app/AptoideTV-3.3.1-useeapps.apk
-            rm -f $SYSDIR/app/FactoryTestTool.apk
-            rm -f $SYSDIR/app/iptvclient_boot-flash.apk
-            rm -f $SYSDIR/app/popup-flash-signed.apk
-            rm -f $SYSDIR/app/ZTEUpgrade.apk
-            rm -f $SYSDIR/app/ZTEBrowser.apk
-            rm -f $SYSDIR/app/ZTEPlayer.apk
-
-            rm -f $SYSDIR/app/VideoTestTool.apk
-            rm -rf $SYSDIR/app/QuickSearchBox
-            rm -rf $SYSDIR/app/NetworkTest
-            rm -rf $SYSDIR/app/ztehelper
-            rm -rf $SYSDIR/app/HomeMediaCenter
-
-            rm -f $SYSDIR/app/IPTV.apk
-            rm -f $SYSDIR/app/mcspbase.apk
-            rm -f $SYSDIR/app/NaAgent.apk
-            rm -f $SYSDIR/app/netmanager.apk
-            rm -f $SYSDIR/app/nmAssistant.apk
-
-            # Cleann!
-            rm -f $SYSDIR/app/OSDService.apk
-            rm -f $SYSDIR/app/ZeroCfgUI.apk
-            rm -f $SYSDIR/app/Dlnagwapt.apk
-            rm -f $SYSDIR/app/MSGAPK.apk
-
-            rm -f $SYSDIR/app/dlna.apk
-            rm -f $SYSDIR/app/MSGAPKSub.apk
             rm -rf $SYSDIR/app/AuthConfig
+            rm -rf $SYSDIR/app/Browser
+                  rm -rf $SYSDIR/app/FileBrowser
+            rm -rf $SYSDIR/priv-app/Gallery2
+            rm -rf $SYSDIR/app/HomeMediaCenter
+            rm -rf $SYSDIR/app/NetworkTest
+            rm -rf $SYSDIR/app/QuickSearchBox
             rm -rf $SYSDIR/app/SubtitleService
-            rm -rf $SYSDIR/app/FileBrowser
+            rm -rf $SYSDIR/app/ztehelper
 
-            # MeBox launcher
+### Remove Packages
+            rm -f $SYSDIR/app/ajvm.apk
+                  rm -f $SYSDIR/app/apm-targetad_ti-zte860_v2.3.0_230-release.apk
+                  rm -f $SYSDIR/app/FactoryTestTool.apk
+            rm -f $SYSDIR/app/IPTV.apk
+            rm -f $SYSDIR/app/iptvclient_boot-release.apk
+            rm -f $SYSDIR/app/Licauth.apk
+                  rm -f $SYSDIR/app/MSGAPK.apk            
+            rm -f $SYSDIR/app/MSGAPKSub.apk
+            rm -f $SYSDIR/app/popup-release-signed.apk
+            rm -f $SYSDIR/app/signed_UseeStore_v0.9.2.apk
+            rm -f $SYSDIR/app/signed-control-release-0.0.0.4.7.apk
+            rm -f $SYSDIR/app/SubtitleService.apk
+            rm -f $SYSDIR/app/ZTE*.apk
+
+### MeBox launcher
             rm -f $SYSDIR/app/launcher_tkz4.apk
 
-            # Must removed if using GAPPS TV
-            rm -f $SYSDIR/app/TVClient.apk
-            #rm -rf $SYSDIR/app/ADBSetting
+### Must removed if using GAPPS TV
             rm -rf $SYSDIR/app/Camera2
             rm -rf $SYSDIR/app/Music
             rm -rf $SYSDIR/app/DownloadProviderUi
@@ -353,15 +308,13 @@ do
             rm -rf $SYSDIR/priv-app/Contacts/
             rm -rf $SYSDIR/priv-app/LiveTv/
 
-            #Uncomment if you want use hardware keyboard only (no softkeyboard)
+### Uncomment if you want use hardware keyboard only (no softkeyboard)
             #rm -rf $SYSDIR/app/LatinIME
             #rm -rf $SYSDIR/app/OpenWnn
 
             echo -e "${red}Remove Unwanted services${no}"
             rm -f $SYSDIR/bin/netaccess
             rm -f $SYSDIR/bin/depconfig
-            rm -rf $SYSDIR/app/AppInstaller
-            rm -rf $SYSDIR/priv-app/Gallery2/
 
             echo -e "${yellow}Remove extra packages${no}"
             rm -rf $SYSDIR/app/cleanXperience-v2
