@@ -1,0 +1,3 @@
+[submodule "tools/linux/dat2img"]
+	path = tools/linux/dat2img
+	url = https://github.com/danielmmmm/dat2img
