@@ -1,0 +1,6 @@
+# begin addon properties
+ro.addon.type=gapps
+ro.addon.platform=mm
+ro.addon.version=purenexus-gapps-mm-mr1-x86-leanback-20160202
+ro.addon.minimumversion=6.0.1
+# end addon properties
